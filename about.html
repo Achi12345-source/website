@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="about.css">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+	<script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+</head>
+<body>
+    <!-- <div id="particles-js" s></div> -->
+    <div class="wrapper">
+        <nav>
+            <div class="logo">
+                <h4>Logo</h4>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contacts</a></li>
+                <li><a href="services.html">Services</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+        <div class="first-video">
+            <video width="700" height="400" src="Achi's web.mp4" autoplay loop muted></video>
+        </div>
+        <div class="about-info">
+        <div class="acc-toggle" data-collapse="">
+			<div class="acc-block">
+				<div class="acc-no">(01)</div>
+				<div class="acc-title">Our Organization</div>
+				<div class="acc-toggle-icon">
+					<ion-icon name="add-outline"></ion-icon>
+				</div>
+			</div>
+		</div>
+		<ul class="ul1">
+			<li class="li1">
+				Lorem Ipsum is simply dummy text of the printing and typesetting
+				industry.
+			</li>
+			<li class="li1">Lorem Ipsum has been the industry's standard dummy text</li>
+			<li class="li1">when an unknown printer took a galley of type and scrambled.</li>
+		</ul>
+
+		<div class="acc-toggle" data-collapse="">
+			<div class="acc-block">
+				<div class="acc-no">(02)</div>
+				<div class="acc-title">Offers</div>
+				<div class="acc-toggle-icon">
+					<ion-icon name="add-outline"></ion-icon>
+				</div>
+			</div>
+		</div>
+		<ul class="ul1">
+			<li class="li1">
+				Lorem Ipsum is simply dummy text of the printing and typesetting
+				industry.
+			</li>
+			<li class="li1">Lorem Ipsum has been the industry's standard dummy text</li>
+			<li class="li1">when an unknown printer took a galley of type and scrambled.</li>
+		</ul>
+
+		<div class="acc-toggle" data-collapse="">
+			<div class="acc-block">
+				<div class="acc-no">(03)</div>
+				<div class="acc-title">Works</div>
+				<div class="acc-toggle-icon">
+					<ion-icon name="add-outline"></ion-icon>
+				</div>
+			</div>
+		</div>
+		<ul class="ul1">
+			<li class="li1">
+				Lorem Ipsum is simply dummy text of the printing and typesetting
+				industry.
+			</li>
+			<li class="li1">Lorem Ipsum has been the industry's standard dummy text</li>
+			<li class="li1">when an unknown printer took a galley of type and scrambled.</li>
+		</ul>
+    </div>
+    </div>
+    <script>
+        let parent = document.querySelectorAll("[data-collapse");
+        parent.forEach((element) => {
+            let clickTarget = element.querySelector("*");
+            let collapseElement = element.nextElementSibling;
+            let collapseElementChildren = collapseElement.children;
+            let tl = new TimelineMax({
+                reversed: true,
+                paused: true,
+            });
+
+            tl.from(
+                collapseElement,
+                1.6,
+                {
+                    className: "+=heightZero",
+                    ease: Expo.easeInOut,
+                },
+                "open"
+            );
+            tl.staggerFrom(
+                collapseElementChildren,
+                1,
+                {
+                    autoAlpha: 0,
+                    y: "40%",
+                    ease: Expo.easeInOut,
+                },
+                0.08,
+                "open+=.1"
+            );
+
+            clickTarget.addEventListener("click", () => {
+                tl.reversed() ? tl.play() : tl.reverse();
+            });
+        });
+    </script>
+    <script src="app.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
